@@ -15,7 +15,7 @@ function capitalizeFirstLetter() {
 function removeSelectedTask() {
   const selectedTask = document.querySelector("#selected");
   if (selectedTask != null) {
-    btnRemoveTask.addEventListener("click", function () {
+    btnRemoveTask.addEventListener("click", () => {
       selectedTask.remove();
     });
   }
@@ -31,14 +31,14 @@ function selectTask(event) {
 }
 
 function createTask() {
-  btnAddTask.addEventListener("click", function () {
+  btnAddTask.addEventListener("click", () => {
     if (taskInput.value.trim().length === 0) {
       alert("Insira uma tarefa.");
     } else {
       const newListItem = document.createElement("li");
       newListItem.innerText = capitalizeFirstLetter();
       newListItem.addEventListener("click", selectTask);
-      newListItem.addEventListener("dblclick", function (event) {
+      newListItem.addEventListener("dblclick", (event) => {
         event.target.classList.toggle("completed");
       });
       taskList.appendChild(newListItem);
@@ -48,7 +48,7 @@ function createTask() {
 }
 
 function clearTasks() {
-  btnClear.addEventListener("click", function () {
+  btnClear.addEventListener("click", () => {
     while (taskList.firstChild) {
       taskList.removeChild(taskList.firstChild);
     }
@@ -58,7 +58,7 @@ function clearTasks() {
 }
 
 function clearCompleted() {
-  btnClearCompleted.addEventListener("click", function () {
+  btnClearCompleted.addEventListener("click", () => {
     const taskCompleted = document.querySelectorAll(".completed");
     for (let i = 0; i < taskCompleted.length; i += 1) {
       taskCompleted[i].remove();
@@ -70,7 +70,7 @@ function saveTasks() {
   for (let i = 0; i < taskList.children.length; i += 1) {
     taskList.children[i].removeAttribute("id");
   }
-  btnSaveTasks.addEventListener("click", function () {
+  btnSaveTasks.addEventListener("click", () => {
     localStorage.setItem("tasks", taskList.innerHTML);
   });
 }
@@ -80,7 +80,7 @@ function loadTasks() {
   for (let i = 0; i < taskList.children.length; i += 1) {
     const task = taskList.children[i];
     task.addEventListener("click", selectTask);
-    task.addEventListener("dblclick", function (event) {
+    task.addEventListener("dblclick", (event) => {
       event.target.classList.toggle("completed");
     });
   }
@@ -91,7 +91,7 @@ function loadTasks() {
 // https://www.w3schools.com/jsref/met_node_insertbefore.asp
 // E também consultei o projeto de um colega para apenas procurar entender melhor como montar a condição: Elias Ferreira.
 function moveUp() {
-  btnMoveUp.addEventListener("click", function () {
+  btnMoveUp.addEventListener("click", () => {
     const selectedTask = document.querySelector("#selected");
     if (selectedTask && selectedTask.previousElementSibling) {
       taskList.insertBefore(selectedTask, selectedTask.previousElementSibling);
@@ -100,7 +100,7 @@ function moveUp() {
 }
 
 function moveDown() {
-  btnMoveDown.addEventListener("click", function () {
+  btnMoveDown.addEventListener("click", () => {
     const selectedTask = document.querySelector("#selected");
     if (selectedTask && selectedTask.nextElementSibling) {
       taskList.insertBefore(selectedTask.nextElementSibling, selectedTask);
@@ -108,7 +108,7 @@ function moveDown() {
   });
 }
 
-window.onload = function () {
+window.onload = () => {
   loadTasks();
   createTask();
   clearTasks();

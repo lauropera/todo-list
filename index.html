@@ -1,64 +1,55 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <title>To do List</title>
-  </head>
-  <body>
-    <header class="header-container flex">
-      <h1>Minha Lista de Tarefas</h1>
-      <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p>
-    </header>
-    <main>
-      <section class="flex">
-        <div class="container">
-          <div class="flex">
-            <input
-              type="text"
-              id="texto-tarefa"
-              maxlength="50"
-              placeholder="Digite sua tarefa"
-            />
-            <button id="criar-tarefa">
-              <i class="fa-solid fa-circle-plus"></i>
-            </button>
-          </div>
-          <div class="flex">
-            <ol id="lista-tarefas"></ol>
-          </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css" />
+  <title>To do List</title>
+</head>
+
+<body>
+  <header class="header-container flex">
+    <h1>Minha Lista de Tarefas</h1>
+    <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p>
+  </header>
+  <main>
+    <section class="flex">
+      <div class="container">
+        <div class="flex">
+          <input type="text" id="texto-tarefa" maxlength="50" placeholder="Digite sua tarefa" />
+          <button id="criar-tarefa">
+            <i class="fa-solid fa-circle-plus"></i>
+          </button>
         </div>
-      </section>
-      <section class="flex button-section">
-        <button id="mover-cima">
-          <i class="fa-solid fa-arrow-up"></i>
-        </button>
-        <button id="mover-baixo">
-          <i class="fa-solid fa-arrow-down"></i>
-        </button>
-        <button id="remover-selecionado">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-        <button id="apaga-tudo">Limpar</button>
-        <button id="salvar-tarefas">Salvar Lista</button>
-        <button id="remover-finalizados">Limpar Completos</button>
-      </section>
-    </main>
-    <script src="script.js"></script>
-  </body>
+        <div class="flex">
+          <ol id="lista-tarefas"></ol>
+        </div>
+      </div>
+    </section>
+    <section class="flex button-section">
+      <button id="mover-cima">
+        <i class="fa-solid fa-arrow-up"></i>
+      </button>
+      <button id="mover-baixo">
+        <i class="fa-solid fa-arrow-down"></i>
+      </button>
+      <button id="remover-selecionado">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <button id="apaga-tudo">Limpar</button>
+      <button id="salvar-tarefas">Salvar Lista</button>
+      <button id="remover-finalizados">Limpar Completos</button>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+
 </html>
